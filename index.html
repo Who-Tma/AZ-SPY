@@ -222,7 +222,7 @@ async function refreshAccountUI(){
         options: { emailRedirectTo: 'https://who-tma.github.io/AZ-SPY/success-page.html' }
       });
       if(error){
-        textEl.textContent = t('accountError');
+        textEl.textContent = t('accountError') + ' [' + (error.message || error.status || '') + ']';
         btn.disabled = false;
         label.textContent = t('btnAccountCreate');
       } else {
